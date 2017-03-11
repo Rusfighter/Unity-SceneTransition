@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTransitionAnimation : MonoBehaviour {
 
@@ -29,6 +30,10 @@ public class SceneTransitionAnimation : MonoBehaviour {
     [SerializeField]
     [Header("Reverse Animation?")]
     private bool m_isReverse = false;
+
+    [Header("Load Scene after transitions")]
+    [SerializeField]
+    private string m_SceneName;
 
     public delegate void OnAnimationFinished();
     public OnAnimationFinished onTransitionFinished;
@@ -62,9 +67,11 @@ public class SceneTransitionAnimation : MonoBehaviour {
             m_isReverse = false;
             m_CurrentTime = 0;
 
-            if (onTransitionFinished != null)
-            {
+            if (onTransitionFinished != null){
                 onTransitionFinished();
+            }
+            else if(m_SceneName != null) {
+                SceneManager.LoadScene(m_SceneName);
             }
 
             return;

@@ -27,8 +27,9 @@ public class CameraTransitionFast : CameraTransition {
     private DepthSize depthSize = DepthSize.SIXTEEN;
  
 
-    protected void Start()
+    protected override void Awake()
     {
+        base.Awake();
         rTex = new RenderTexture((int)(Screen.width / (int)downScaleFactor), (int)(Screen.height / (int)downScaleFactor),
             (int)depthSize, RenderTextureFormat.Default);
     }

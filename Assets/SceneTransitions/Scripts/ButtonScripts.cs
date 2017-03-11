@@ -11,19 +11,19 @@ public class ButtonScripts : MonoBehaviour {
     public void Fade()
     {
         sta1.startAnimation();
-        sta1.onTransitionFinished += loadNextScene;
+        //sta1.onTransitionFinished += loadNextScene;
     }
 
     public void Transition1()
     {
         sta2.startAnimation();
-        sta2.onTransitionFinished += loadNextScene;
+       // sta2.onTransitionFinished += loadNextScene;
     }
 
     public void Transition2()
     {
         sta3.startAnimation();
-        sta3.onTransitionFinished += loadNextScene;
+       // sta3.onTransitionFinished += loadNextScene;
     }
 
     public void Transition3()
