@@ -30,7 +30,7 @@ public class CameraTransitionFast : CameraTransition {
     protected override void Awake()
     {
         base.Awake();
-        rTex = new RenderTexture((int)(Screen.width / (int)downScaleFactor), (int)(Screen.height / (int)downScaleFactor),
+        rTex = new RenderTexture((int)(m_Camera.pixelWidth / (int)downScaleFactor), (int)(m_Camera.pixelHeight / (int)downScaleFactor),
             (int)depthSize, RenderTextureFormat.Default);
     }
 

@@ -1,4 +1,4 @@
-﻿Shader "Hidden/SceneTransition"
+﻿Shader "Simple Scene Transitions/Simple"
 {
 	Properties
 	{

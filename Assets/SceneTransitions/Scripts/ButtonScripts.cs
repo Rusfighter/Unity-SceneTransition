@@ -23,7 +23,7 @@ public class ButtonScripts : MonoBehaviour {
     public void Transition2()
     {
         sta3.startAnimation();
-       // sta3.onTransitionFinished += loadNextScene;
+        sta3.onTransitionFinished += loadNextScene;
     }
 
     public void Transition3()

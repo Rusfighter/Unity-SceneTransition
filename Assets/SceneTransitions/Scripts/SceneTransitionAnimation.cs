@@ -53,7 +53,9 @@ public class SceneTransitionAnimation : MonoBehaviour {
 
     private void OnEnable()
     {
-        m_CameraTransition.setMaterial(m_Material);
+        if (m_Active)
+            m_CameraTransition.setMaterial(m_Material);
+
         m_StartCutoff = m_Material.GetFloat("_Cutoff");
         m_StartFade = m_Material.GetFloat("_Fade");
     }
@@ -70,7 +72,7 @@ public class SceneTransitionAnimation : MonoBehaviour {
             if (onTransitionFinished != null){
                 onTransitionFinished();
             }
-            else if(m_SceneName != null) {
+            else if(m_SceneName != null && m_SceneName.Length != 0) {
                 SceneManager.LoadScene(m_SceneName);
             }
 
